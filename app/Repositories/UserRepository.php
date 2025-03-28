@@ -10,21 +10,19 @@ class UserRepository implements UserRepositoryInterface
     {
         return User::create($data);
     }
-
     public function deleteUser($id)
     {
         return User::destroy($id);
     }
     public function getAllUsers()
     {
-        return User::latest()->get();
+        return User::latest()->paginate(3);
     }
 
     public function getUserById($id)
     {
         return User::find($id);
     }
-
     public function editUser($id, array $data)
     {
         return User::find($id)->update($data);

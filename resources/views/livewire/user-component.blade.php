@@ -7,8 +7,6 @@
         <input type="email" wire:model="userForm.email" placeholder="Email">
         <button type="submit">Create User</button>
     </form>
-
-
     <ul>
         @foreach($users as $user)
         <li>
@@ -25,6 +23,5 @@
         </li>
         @endforeach
     </ul>
-
-
+    {{ $users->links() }}
 </div>
