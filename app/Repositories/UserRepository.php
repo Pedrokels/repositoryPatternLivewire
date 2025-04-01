@@ -19,7 +19,7 @@ class UserRepository implements UserRepositoryInterface
         return User::latest()->paginate(3);
     }
 
-    public function getUserById($id)
+    public function getUser($id)
     {
         return User::find($id);
     }

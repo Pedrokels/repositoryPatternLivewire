@@ -13,10 +13,16 @@ class UserForm extends Form
     #[Validate('required', 'email', 'unique:users,email')]
     public $email;
 
+    #[Validate('required')]
+    public $editName;
+
+    #[Validate('required', 'email', 'unique:users,email')]
+    public $editEmail;
+
     public $password;
 
     public function setDefaultPassword()
     {
-        $this->password = bcrypt('password123'); // ✅ Set password inside a method
+        $this->password = bcrypt('password123');
     }
 }

@@ -11,8 +11,8 @@
         @foreach($users as $user)
         <li>
             @if($editID === $user->id)
-            <input type="text" wire:model="userForm.name" placeholder="Name">
-            <input type="email" wire:model="userForm.email" placeholder="Email">
+            <input type="text" wire:model="userForm.editName" placeholder="Name">
+            <input type="email" wire:model="userForm.editEmail" placeholder="Email">
             <button wire:click="saveEditedUser">Save changes</button>
             @else
             <span>{{ $user->name }}</span>
